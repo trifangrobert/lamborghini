@@ -1,55 +1,340 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-	<title>Magazin de masini</title>
-	<meta charset="utf-8">
-	<meta name="keywords" content="motor, cai putere">
-	<meta name="description" content="Vrum vrum">
-	<meta name="author" content="Trifan Robert-Gabriel">
+  <head>
+    <title>Magazin de masini</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="motor, cai putere" />
+    <meta name="description" content="Vrum vrum" />
+    <meta name="author" content="Trifan Robert-Gabriel" />
 
-	<link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./resurse/ico/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./resurse/ico/favicon-16x16.png">
-	<link rel="manifest" href="./resurse/ico/site.webmanifest">
-	<link rel="mask-icon" href="./resurse/ico/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="./resurse/ico/favicon.ico">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="msapplication-config" content="./resurse/ico/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
-</head>
-<body>
-	<header>
-		<h1>Magazin de masini</h1>
-		<nav>
-			<ul>
-				<li><div>Acasa</div>
-                   <ul>
-                       <li><a href="#s1">Modele (sectiune 1)</a></li>
-                       <li><a href="#s2">Performante (sectiune 2)</a></li>
-                   </ul>
-               </li>
-               <li>Modele</li>
-               <ul>
-                    <li>Aventador</li>
-                    <li>Huracan</li>
-                    <li>Urus</li>
-               </ul>
-               <li>Contact</li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<a href="https://www.google.com/" target="_blank">GOOGLE</a>
+    <link rel="stylesheet" href="./resurse/css/all.min.css">
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./resurse/ico/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./resurse/ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./resurse/ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./resurse/ico/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./resurse/ico/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="./resurse/ico/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta
+      name="msapplication-config"
+      content="./resurse/ico/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="./resurse/css/index.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <label id="hamburger" for="ch-menu">
+          <img src="./resurse/imagini/Hamburger_icon_alb.png" alt="hamburger">
+        </label>
+        <input id="ch-menu" type="checkbox">
+
+        <ul class="menu">
+          <li>
+            <a href="index.html"><span id="home-display" class="fas fa-home"></span><span id="home-write">Acasa</span></a>
+          </li>
+          <li>
+            <div>Firme</div>
+            <ul class="submenu">
+              <li><a href="lamborghini.html">Detalii despre lamborghini</a></li>
+              <li><a href="ferrari.html">Ferrari</a></li>
+              <li><a href="mclaren.html">Mclaren</a></li>
+              <li><a href="bmw.html">BMW</a></li>
+            </ul>
+          </li>
+          <li>
+            <div>Accesare rapida</div>
+            <ul class="submenu">
+              <li><a href="#details-car">Lamborghini</a></li>
+              <li><a href="#lambo-founder">Fondator</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div title="go back to the top" class="rotated-square">
+        <a href="#" class="triangle"></a>
+      </div>
+      <!-- animation: spin-right 10s linear infinite; -->
+      <!-- <div class="terra-orbit">
+        <div class="terra"></div>
+        <div class="moon-orbit">
+          <div class="moon"></div>
+        </div>
+      </div> -->
+
+      <!-- <h1>Magazin de masini</h1>
+      <nav>
+        <ul>
+          <li>
+            <div>Acasa</div>
+            <ul>
+              <li><a href="#s1">Modele (sectiune 1)</a></li>
+              <li><a href="#s2">Performante (sectiune 2)</a></li>
+            </ul>
+          </li>
+          <li>
+            Modele
+            <ul>
+              <li>Aventador</li>
+              <li>Huracan</li>
+              <li>Urus</li>
+            </ul>
+          </li>
+          <li>Contact</li>
+        </ul>
+      </nav> -->
+    </header>
+    <main>
+      <div id="grid-container">
+        <div id="id1">
+          <div class="polaroid">
+            <img
+              src="./resurse/imagini/urus.jpg"
+              alt="urus"
+              style="width: 100%; height: 100%"
+            />
+            <div class="container">Lamborghini Urus</div>
+          </div>
+
+          <div class="polaroid">
+            <img
+              src="./resurse/imagini/coupe.jpg"
+              alt="coupe"
+              style="width: 100%; height: 100%"
+            />
+            <div class="container">Mclaren coupe</div>
+          </div>
+
+          <div class="polaroid">
+            <img
+              src="./resurse/imagini/pista.jpg"
+              alt="pista"
+              style="width: 100%; height: 100%"
+            />
+            <div class="container">Ferrari Pista</div>
+          </div>
+
+          <div class="polaroid">
+            <img
+              src="./resurse/imagini/m8.jpg"
+              alt="m8"
+              style="width: 100%; height: 100%"
+            />
+            <div class="container">BMW M8</div>
+          </div>
+        </div>
+        <div id="id2">
+          <table id="tab">
+            <caption>
+              Masini de pe site
+            </caption>
+            <thead>
+              <tr>
+                <th>Masina</th>
+                <th>Modele</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3">Lamborghini</td>
+                <td>Urus</td>
+              </tr>
+              <tr>
+                <td>Avendator</td>
+              </tr>
+              <tr>
+                <td>Huracan</td>
+              </tr>
+              <tr>
+                <td>BMW</td>
+                <td>M8</td>
+              </tr>
+              <tr>
+                <td>Mclaren</td>
+                <td>Coupe</td>
+              </tr>
+              <tr>
+                <td>Ferrari</td>
+                <td>Pista</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="id3">
+          Calendarul de evenimente <br /><br /><br />Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Vivamus eget quam eget erat tincidunt
+          convallis eget nec tortor. Donec venenatis dapibus quam quis cursus.
+          In hac habitasse platea dictumst. Donec vel est ultrices, vehicula
+          nulla in, ullamcorper risus. Mauris vitae eleifend metus. Suspendisse
+          volutpat vulputate sagittis. Quisque pharetra viverra nisi in semper.
+          Mauris id ultrices quam. In condimentum mattis pretium. Praesent
+          laoreet nisi vulputate quam gravida luctus. Maecenas finibus nisi
+          turpis, vitae varius nisl aliquam quis. Cras mollis ligula congue
+          suscipit auctor. Donec facilisis diam nulla, eget iaculis lorem rutrum
+          a. Nullam eget sapien malesuada, consequat urna at, scelerisque erat.
+          Quisque malesuada, enim eget placerat mattis, diam sapien dapibus
+          quam, sed sagittis urna nisi at sapien. Proin condimentum sapien sit
+          amet eros volutpat tempus. Vestibulum pretium ut lorem et commodo. Sed
+          efficitur vel mi eu auctor. Phasellus in luctus ante. Sed quis
+          facilisis neque, at pellentesque arcu. Nullam nec lacus a nunc laoreet
+          volutpat nec et ligula. Morbi tempus pretium mauris, nec condimentum
+          nisl ornare dapibus. Maecenas commodo sollicitudin porta. Donec
+          molestie nulla ultrices nulla varius, ut imperdiet nibh imperdiet.
+          Integer commodo tellus ac tortor pellentesque aliquet. Nam et enim
+          porttitor, sagittis turpis hendrerit, bibendum magna. Ut at blandit
+          orci.
+        </div>
+        <div id="id4">
+          Anunturi <br /><br /><br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget
+          quam eget erat tincidunt convallis eget nec tortor. Donec venenatis
+          dapibus quam quis cursus. In hac habitasse platea dictumst. Donec vel
+          est ultrices, vehicula nulla in, ullamcorper risus. Mauris vitae
+          eleifend metus. Suspendisse volutpat vulputate sagittis. Quisque
+          pharetra viverra nisi in semper. Mauris id ultrices quam. In
+          condimentum mattis pretium. Praesent laoreet nisi vulputate quam
+          gravida luctus. Maecenas finibus nisi turpis, vitae varius nisl
+          aliquam quis. Cras mollis ligula congue suscipit auctor. Donec
+          facilisis diam nulla, eget iaculis lorem rutrum a. Nullam eget sapien
+          malesuada, consequat urna at, scelerisque erat. Quisque malesuada,
+          enim eget placerat mattis, diam sapien dapibus quam, sed sagittis urna
+          nisi at sapien. Proin condimentum sapien sit amet eros volutpat
+          tempus. Vestibulum pretium ut lorem et commodo. Sed efficitur vel mi
+          eu auctor. Phasellus in luctus ante. Sed quis facilisis neque, at
+          pellentesque arcu. Nullam nec lacus a nunc laoreet volutpat nec et
+          ligula. Morbi tempus pretium mauris, nec condimentum nisl ornare
+          dapibus. Maecenas commodo sollicitudin porta. Donec molestie nulla
+          ultrices nulla varius, ut imperdiet nibh imperdiet. Integer commodo
+          tellus ac tortor pellentesque aliquet. Nam et enim porttitor, sagittis
+          turpis hendrerit, bibendum magna. Ut at blandit orci.
+        </div>
+        <div id="id5">
+          Lista de utilizatori online <br /><br /><br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget
+          quam eget erat tincidunt convallis eget nec tortor. Donec venenatis
+          dapibus quam quis cursus. In hac habitasse platea dictumst. Donec vel
+          est ultrices, vehicula nulla in, ullamcorper risus. Mauris vitae
+          eleifend metus. Suspendisse volutpat vulputate sagittis. Quisque
+          pharetra viverra nisi in semper. Mauris id ultrices quam. In
+          condimentum mattis pretium. Praesent laoreet nisi vulputate quam
+          gravida luctus. Maecenas finibus nisi turpis, vitae varius nisl
+          aliquam quis. Cras mollis ligula congue suscipit auctor. Donec
+          facilisis diam nulla, eget iaculis lorem rutrum a. Nullam eget sapien
+          malesuada, consequat urna at, scelerisque erat. Quisque malesuada,
+          enim eget placerat mattis, diam sapien dapibus quam, sed sagittis urna
+          nisi at sapien. Proin condimentum sapien sit amet eros volutpat
+          tempus. Vestibulum pretium ut lorem et commodo. Sed efficitur vel mi
+          eu auctor. Phasellus in luctus ante. Sed quis facilisis neque, at
+          pellentesque arcu. Nullam nec lacus a nunc laoreet volutpat nec et
+          ligula. Morbi tempus pretium mauris, nec condimentum nisl ornare
+          dapibus. Maecenas commodo sollicitudin porta. Donec molestie nulla
+          ultrices nulla varius, ut imperdiet nibh imperdiet. Integer commodo
+          tellus ac tortor pellentesque aliquet. Nam et enim porttitor, sagittis
+          turpis hendrerit, bibendum magna. Ut at blandit orci.
+        </div>
+        <div id="id6">
+          Utilizator si statici <br /><br /><br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget
+          quam eget erat tincidunt convallis eget nec tortor. Donec venenatis
+          dapibus quam quis cursus. In hac habitasse platea dictumst. Donec vel
+          est ultrices, vehicula nulla in, ullamcorper risus. Mauris vitae
+          eleifend metus. Suspendisse volutpat vulputate sagittis. Quisque
+          pharetra viverra nisi in semper. Mauris id ultrices quam. In
+          condimentum mattis pretium. Praesent laoreet nisi vulputate quam
+          gravida luctus. Maecenas finibus nisi turpis, vitae varius nisl
+          aliquam quis. Cras mollis ligula congue suscipit auctor. Donec
+          facilisis diam nulla, eget iaculis lorem rutrum a. Nullam eget sapien
+          malesuada, consequat urna at, scelerisque erat. Quisque malesuada,
+          enim eget placerat mattis, diam sapien dapibus quam, sed sagittis urna
+          nisi at sapien. Proin condimentum sapien sit amet eros volutpat
+          tempus. Vestibulum pretium ut lorem et commodo. Sed efficitur vel mi
+          eu auctor. Phasellus in luctus ante. Sed quis facilisis neque, at
+          pellentesque arcu. Nullam nec lacus a nunc laoreet volutpat nec et
+          ligula. Morbi tempus pretium mauris, nec condimentum nisl ornare
+          dapibus. Maecenas commodo sollicitudin porta. Donec molestie nulla
+          ultrices nulla varius, ut imperdiet nibh imperdiet. Integer commodo
+          tellus ac tortor pellentesque aliquet. Nam et enim porttitor, sagittis
+          turpis hendrerit, bibendum magna. Ut at blandit orci.
+        </div>
+        <div id="id7">
+          Date despre site si server <br /><br /><br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget
+          quam eget erat tincidunt convallis eget nec tortor. Donec venenatis
+          dapibus quam quis cursus. In hac habitasse platea dictumst. Donec vel
+          est ultrices, vehicula nulla in, ullamcorper risus. Mauris vitae
+          eleifend metus. Suspendisse volutpat vulputate sagittis. Quisque
+          pharetra viverra nisi in semper. Mauris id ultrices quam. In
+          condimentum mattis pretium. Praesent laoreet nisi vulputate quam
+          gravida luctus. Maecenas finibus nisi turpis, vitae varius nisl
+          aliquam quis. Cras mollis ligula congue suscipit auctor. Donec
+          facilisis diam nulla, eget iaculis lorem rutrum a. Nullam eget sapien
+          malesuada, consequat urna at, scelerisque erat. Quisque malesuada,
+          enim eget placerat mattis, diam sapien dapibus quam, sed sagittis urna
+          nisi at sapien. Proin condimentum sapien sit amet eros volutpat
+          tempus. Vestibulum pretium ut lorem et commodo. Sed efficitur vel mi
+          eu auctor. Phasellus in luctus ante. Sed quis facilisis neque, at
+          pellentesque arcu. Nullam nec lacus a nunc laoreet volutpat nec et
+          ligula. Morbi tempus pretium mauris, nec condimentum nisl ornare
+          dapibus. Maecenas commodo sollicitudin porta. Donec molestie nulla
+          ultrices nulla varius, ut imperdiet nibh imperdiet. Integer commodo
+          tellus ac tortor pellentesque aliquet. Nam et enim porttitor, sagittis
+          turpis hendrerit, bibendum magna. Ut at blandit orci.
+        </div>
+        <div id="id8">
+          <div class="creator">
+            <div class="creator-image">
+              <img src="./resurse/imagini/Ferruccio.jpg" alt="Ferruccio" />
+            </div>
+            <div class="creator-text">
+              Ferruccio Lamborghini was an Italian automobile designer,
+              inventor, mechanic, engineer, winemaker, industrialist and
+              businessman who created In 1963, Automobili Lamborghini, a maker
+              of high-end sports cars in Sant'Agata Bolognese.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="cont-iframe">
+        <div id="cont-linkuri">
+          <a href="https://www.youtube.com/embed/5ZawH-aKmLY" target="ifr"
+            >Mclaren coupe</a
+          >
+          <a href="https://www.youtube.com/embed/_wxaYP0Nx4k" target="ifr"
+            >Lamborghini urus</a
+          >
+        </div>
+        <iframe src="" name="ifr" height="420" width="315"></iframe>
+      </div>
+      <a href="https://www.google.com/" target="_blank">GOOGLE</a>
 		<br/>
 		<a href="./resurse/imagini/huracan.jpg" download="greenhuracan.jpg">Poza cu un huracan frumos</a>
 		<br/>
-		<iframe src="./index.html" name="ifr" height="420" width="315"></iframe>
-		<br/>
-		<a href="https://www.youtube.com/embed/d-xJL9lgMbw" target="ifr">Un miliard de dolari.</a>
-		<a href="https://www.youtube.com/embed/_wxaYP0Nx4k" target="ifr">Un lamborghini urus.</a>
+		
 		<details>
 			<summary>Detalii despre lamborghini</summary>
-			<p>Cea mai misto masina</p>
+			<p id="details-car"><strong>Cea mai misto masina</strong></p>
 			<ol>
 				<li>Avendator</li>
 				<li>Huracan</li>
@@ -58,8 +343,9 @@
 
 		</details>
 		<section id="s1">
+			<abbr title="Frequently Asked Questions">FAQ</abbr>
 			<h2>Descriere</h2>
-			<p>Fondat de Ferruccio Lamborghini</p>
+			<p id="lambo-founder">Fondat de <b>Ferruccio Lamborghini</b></p>
 			<ol>
 				<li>Firma italiana</li>
 				<li>Fondata in anul 1963</li>
@@ -81,23 +367,27 @@
 				<source srcset="./resurse/imagini/aventador.jpg" media="(max-width:700px)">
 				<source srcset="./resurse/imagini/huracan.jpg" media="(max-width:1200px)">
 				<img src="./resurse/imagini/urus.jpg" />
-				<figcaption>Rup asfaltu</figcaption>
 			</picture>	
+			<figcaption>Rup asfaltu</figcaption>
 		</figure>
-	</main>
-	<footer>
-		<a href="#">Top</a>
-		<address>
-			<a href="tel:+1234567890">Numar de telefon</a>
-			<br/>
-			<a href="mailto:trifangrobert@gmail.com">3funnn</a>
-			<br/>
-			<a href="https://goo.gl/maps/5qfeHsNX6L9vd9wX9" target="_blank">FMI</a>
-			<br/>
-			<a href="https://web.whatsapp.com/" target="_blank">whatsapp</a>
-			<br/>
-		</address>
-		<small>&copy;<time datetime="2022-19-02 00:00">Anul 1, semestrul 2</time></small>
-	</footer>
-</body>
+    </main>
+    <footer>
+      <a href="#">Top</a>
+      <address>
+        <a href="tel:+40752840818">Numar de telefon</a>
+        <br />
+        <a href="mailto:trifangrobert@gmail.com">3funnn</a>
+        <br />
+        <a href="https://goo.gl/maps/5qfeHsNX6L9vd9wX9" target="_blank">FMI</a>
+        <br />
+        <a href="https://wa.me/+40752840818" target="_blank">whatsapp</a>
+        <br />
+      </address>
+      <small
+        >&copy;<time datetime="2022-02-19 00:00"
+          >Anul 1, semestrul 2</time
+        ></small
+      >
+    </footer>
+  </body>
 </html>
