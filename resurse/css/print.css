@@ -1,0 +1,131 @@
+#banner,
+#watermark {
+  display: none;
+}
+
+@media print {
+  footer {
+    page-break-before: always;
+  }
+
+  #site-title {
+    page-break-after: always;
+    margin-top: 40%;
+    text-align: center;
+    margin-left: 1cm;
+    font-size: 2.5em;
+    text-decoration: underline;
+  }
+  nav {
+    display: none;
+  }
+  #banner {
+    position: relative;
+    left: 10%;
+    /* text-align: center; */
+    display: block;
+    width: 80%;
+    height: 10em;
+    border: 1px dotted black;
+    margin: 10px;
+  }
+  #banner p {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    font-size: 50px;
+  }
+  #id1 {
+    display: none;
+  }
+  .creator {
+    display: none;
+  }
+  figure {
+    display: none;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  div.rotated-square {
+    display: none;
+  }
+  #video-vtt,
+  #galerie-statica,
+  #cont-iframe {
+    display: none;
+  }
+
+  #grid-container {
+    display: block;
+  }
+  #tab {
+    width: 30em;
+  }
+  #site-title {
+    page-break-after: always;
+  }
+
+  #watermark {
+    display: block;
+    position: fixed; /*apare pe toate paginile*/
+    bottom: 0;
+    width: 100px;
+    height: 2cm;
+    color: rgba(0, 0, 0, 0.65);
+    right: 0;
+    z-index: 1000;
+  }
+  #watermark::after {
+    opacity: 0.65;
+    padding: 5px;
+    display: block;
+    background: white;
+    border: 10px double black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: none;
+    content: "Robert Trifan";
+  }
+  #line {
+    background-color: green;
+    height: 5px;
+    width: 90%;
+    border-top: 10px solid orange;
+    border-bottom: 10px solid orange;
+    border-left: 30px solid green;
+    border-right: 30px solid green;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin-bottom: 2cm;
+  margin-top: 2cm;
+}
+@page: left {
+  margin-left: 2.5cm;
+  margin-right: 0.5cm;
+}
+@page: right {
+  margin-right: 2.5cm;
+  margin-left: 0.5cm;
+}
+
+/* hr::after {
+    content:"\A";
+    border-style: solid;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent black transparent transparent;
+    position: absolute;
+    left: -15px;
+    height: 0;
+    width: 0;
+    border: 1px solid black;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid black; 
+    display: block;
+} */

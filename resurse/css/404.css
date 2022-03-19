@@ -1,0 +1,41 @@
+.not-found-container {
+  width: 50em;
+  height: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ff0000;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 10em;
+}
+
+.not-found-oops {
+  font-size: 10rem;
+}
+
+.not-found-text {
+  font-size: 3rem;
+}
+
+.not-found-oops * {
+  font-size: 4rem;
+}
+
+.not-found-dacia {
+  width: 10px;
+  height: 10px;
+}
+
+img {
+  position: relative;
+  left: 30%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: lightcyan;
+}

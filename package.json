@@ -1,0 +1,31 @@
+{
+  "name": "lamborghini",
+  "version": "1.0.0",
+  "description": "site masini",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trifangrobert/lamborghini.git"
+  },
+  "keywords": [
+    "lamborghini",
+    "ferrari",
+    "mclaren",
+    "bmw"
+  ],
+  "author": "Trifan Robert-Gabriel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trifangrobert/lamborghini/issues"
+  },
+  "homepage": "https://github.com/trifangrobert/lamborghini#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "sharp": "^0.30.3"
+  }
+}
