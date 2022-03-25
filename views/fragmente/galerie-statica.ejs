@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="/resurse/css/galerie-statica.css">
+</head>
+<html lang="ro">
+  <main>
+    <div id="galerie-statica">
+       <% 
+       let k = 0; 
+       v_luni=["decembrie", "ianuarie", "februarie"];
+       let a = [];
+      for (let imag of locals.imagini) {  
+        for (let i = 0;i < imag.luni.length;i++) { if (v_luni.includes(imag.luni[i])) {
+            a.push(imag) } } } 
+      a = [...new Set(a)];
+      let b = [];
+      let sz = 0;
+      for (let i = 0;i < a.length;++i) {
+        if (sz < 12) {
+            b.push(a[i]);
+            sz++;
+        }
+      }
+      for (let imag of b) { ++k; %>
+      <figure>
+        <picture title="<%- imag.text_descriere %>">
+          <source srcset="<%- imag.mic %>" media="(max-width:800px)" />
+          <source srcset="<%- imag.mediu %>" media="(max-width:1200px)" />
+          <img src="<%- imag.mare %>" alt="<%- imag.alt ? imag.alt : imag.titlu %>"  title="<%- imag.license ? imag.license : imag.text_descriere %>"/>
+        </picture>
+        <figcaption><%- imag.titlu %></figcaption>
+      </figure>
+      <% } %>
+    </div>
+  </main>
+</html>

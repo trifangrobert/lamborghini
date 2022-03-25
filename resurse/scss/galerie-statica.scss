@@ -1,0 +1,76 @@
+#galerie-statica {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 2em;
+}
+
+#galerie-statica img {
+  width: 100%;
+}
+
+$p: 1;
+$q: 1;
+
+@for $i from 1 to 13 {
+  #galerie-statica figure:nth-child(#{$i}) {
+    grid-area: #{$p}/#{$q}/#{($p + 1)}/#{($q + 1)};
+  }
+  $q: $q + 2;
+  @if $q > 3 {
+    $q: $q - 3;
+    $p: $p + 1;
+  }
+}
+
+$p: 1;
+$q: 1;
+
+@for $i from 1 to 13 {
+  #galerie-statica figure:nth-child(#{$i}) {
+    grid-area: #{$p}/#{$q}/#{($p + 1)}/#{($q + 1)};
+  }
+  $q: $q + 1;
+  @if $q > 2 {
+    $q: 1;
+    $p: $p + 1;
+  }
+}
+
+$p: 1;
+$q: 1;
+
+@for $i from 1 to 13 {
+  #galerie-statica figure:nth-child(#{$i}) {
+    grid-area: #{$p}/#{$q}/#{($p + 1)}/#{($q + 1)};
+  }
+  $p : $p + 1;
+}
+
+
+
+
+#galerie-statica {
+  counter-reset: nr_imag;
+}
+
+#galerie-statica figcaption {
+  text-align: center;
+}
+
+#galerie-statica figcaption::before {
+  counter-increment: nr_imag;
+  content: counter(nr_imag, lower-greek) ") ";
+}
+
+#galerie-statica figure:hover figcaption {
+  transform: scale(1.45, 1.45);
+}
+
+#galerie-statica figure:hover img {
+  filter: contrast(200%);
+}
+
+#galerie-statica figure * {
+  transition: all 1100ms linear;
+}

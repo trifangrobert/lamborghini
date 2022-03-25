@@ -6,6 +6,7 @@
     <meta name="description" content="Vrum vrum" />
     <%- include("../fragmente/head.ejs"); %>
     <link rel="stylesheet" href="/resurse/css/print.css">
+    <link rel="stylesheet" href="/resurse/css/galerie_animata.css">
   </head>
   <body>
     <div id="banner">
@@ -46,23 +47,7 @@
         <p><%- p.id %> <%- p.nume %> <%- p.pret %></p>
       <% } %>
       <p><%- locals.ip%></p>
-      <div id="galerie-statica">
-        <% 
-        let k = 0;
-        v_luni=["ianuarie", "februarie", "martie", "aprilie", "mai"];
-        d = new Date();
-        for (let imag of locals.imagini) { k++ 
-          if (imag.luni && imag.luni.includes(v_luni[d.getMonth()])) { %>
-        <figure>
-          <picture>
-            <source srcset="<$- imag.mic %>" media="(max-width:800px)" />
-            <source srcset="<$- imag.mediu %>" media="(max-width:1200px)" />
-            <img src="<%- imag.mare %>" alt="text alternativ" />
-          </picture>
-          <figcaption><%- imag.descriere %></figcaption>
-        </figure>
-        <% } } %>
-      </div>
+    <%- include("../fragmente/galerie-statica.ejs"); %>
 
       <div id="grid-container">
         <div id="id1">
@@ -315,6 +300,24 @@
         >Poza cu un huracan frumos</a
       >
       <br />
+
+      <div id="galerie-animata" class="galerie-a">
+        <% for (let imag of locals.imagini){ %>
+
+        <figure>
+          <picture>
+            <!-- il ia pe primul care se potriveste cu query-ul din media-->
+
+            <source srcset="/<%-imag.mic%>" media="(max-width:700px)" />
+
+            <img src="/<%-imag.mare%>" alt="text" />
+          </picture>
+
+          <figcaption><%-imag.descriere%></figcaption>
+        </figure>
+
+        <% } %>
+      </div>
 
       <details>
         <summary>Detalii despre lamborghini</summary>

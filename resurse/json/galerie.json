@@ -2,35 +2,61 @@
 	"cale_galerie":"resurse/imagini/galerie",
 	"imagini": [
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie", "februarie", "iunie"]
-		},
-		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
+			"cale_fisier":"aventador.jpg",
+			"titlu":"Aventador",
+			"alt":"Lamborghini Aventador",
+			"text_descriere":"690HP",
 			"luni":["ianuarie", "februarie", "iunie"]
 		},
 		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"luni":["martie", "februarie", "iunie"]
+			"cale_fisier":"coupe.jpg",
+			"titlu":"Coupe",
+			"alt":"Mclaren Coupe",
+			"text_descriere":"710HP",
+			"luni":["ianuarie", "februarie", "martie"]
 		},
 		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară"
+			"cale_fisier":"huracan.jpg",
+			"titlu":"Huracan",
+			"alt":"Lamborghini Huracan",
+			"text_descriere":"602HP",
+			"luni":["februarie", "august", "septembrie"]
 		},
 		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată"
+			"cale_fisier":"m8.jpg",
+			"titlu":"M8",
+			"alt":"BMW M8",
+			"text_descriere":"591HP",
+			"luni":["iulie", "august", "decembrie"]
 		},
 		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
+			"cale_fisier":"pista.jpg",
+			"titlu":"Pista",
+			"alt":"Ferrari Pista",
+			"text_descriere":"661HP",
+			"luni":["martie", "aprilie", "mai"]
 		},
 		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"cale_fisier":"urus.jpg",
+			"titlu":"Urus",
+			"alt":"Lamborghini Urus",
+			"text_descriere":"592HP",
+			"luni":["decembrie", "aprilie", "ianuarie"]
+		},
+		{
+			"cale_fisier":"sian.jpg",
+			"titlu":"Sian",
+			"alt":"Lamborghini Sian",
+			"text_descriere":"807HP",
+			"luni":["mai", "aprilie", "noiembrie"]
+		},
+		{
+			"cale_fisier":"red-aventador.jpg",
+			"titlu":"Red Avendator",
+			"alt":"Lamborghini Aventador",
+			"text_descriere":"769HP",
+			"luni":["mai", "aprilie", "decembrie"],
+			"license": "https://commons.wikimedia.org/wiki/File:Lamborghini_Aventador.jpg"
 		}
 	]
 }
