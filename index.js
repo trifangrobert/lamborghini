@@ -36,6 +36,18 @@ app.get(["/", "/index", "/home"], function (req, res) {
   // res.render("pagini/index", {a:req.a});
 });
 
+app.get("/produse", function(req, res) {
+  client.query('select * from cars', function (err, rezQuery) {
+    res.render("pagini/produse", {produse: rezQuery.rows});
+  });
+});
+
+app.get("/produs/:id", function(req, res) {
+  client.query(`select * from cars where id=${req.params.id}`, function (err, rezQuery) {
+    res.render("pagini/produs", {prod: rezQuery.rows[0]});
+  });
+});
+
 app.get("/galerie-statica", function (req, res) {
   res.render("fragmente/galerie-statica", {imagini: obImagini.imagini});
 });
@@ -107,7 +119,7 @@ app.get("*/galerie_animata.css", function (req, res) {
     res.setHeader("Content-Type", "text/css");
     res.sendFile(caleCss);
   } catch (err) {
-    // console.log(err);
+    console.log(err);
     res.send("Eroare");
   }
 });

@@ -5,8 +5,8 @@
     <meta name="keywords" content="motor, cai putere" />
     <meta name="description" content="Vrum vrum" />
     <%- include("../fragmente/head.ejs"); %>
-    <link rel="stylesheet" href="/resurse/css/print.css">
-    <link rel="stylesheet" href="/resurse/css/galerie_animata.css">
+    <link rel="stylesheet" href="/resurse/css/print.css" />
+    <link rel="stylesheet" href="/resurse/css/galerie_animata.css" />
   </head>
   <body>
     <div id="banner">
@@ -44,10 +44,10 @@
     <main>
       <p id="watermark"></p>
       <% for (let p of locals.produse){ %>
-        <p><%- p.id %> <%- p.nume %> <%- p.pret %></p>
+      <p><%- p.id %> <%- p.nume %> <%- p.pret %></p>
       <% } %>
       <p><%- locals.ip%></p>
-    <%- include("../fragmente/galerie-statica.ejs"); %>
+      <%- include("../fragmente/galerie-statica.ejs"); %>
 
       <div id="grid-container">
         <div id="id1">
@@ -155,21 +155,20 @@
           Mauris id ultrices quam. In condimentum mattis pretium. Praesent
           laoreet nisi vulputate quam gravida luctus. Maecenas finibus nisi
           turpis, vitae varius nisl aliquam quis.
-          <hr id="line">
-          Cras mollis ligula congue
-          suscipit auctor. Donec facilisis diam nulla, eget iaculis lorem rutrum
-          a. Nullam eget sapien malesuada, consequat urna at, scelerisque erat.
-          Quisque malesuada, enim eget placerat mattis, diam sapien dapibus
-          quam, sed sagittis urna nisi at sapien. Proin condimentum sapien sit
-          amet eros volutpat tempus. Vestibulum pretium ut lorem et commodo. Sed
-          efficitur vel mi eu auctor. Phasellus in luctus ante. Sed quis
-          facilisis neque, at pellentesque arcu. Nullam nec lacus a nunc laoreet
-          volutpat nec et ligula. Morbi tempus pretium mauris, nec condimentum
-          nisl ornare dapibus. Maecenas commodo sollicitudin porta. Donec
-          molestie nulla ultrices nulla varius, ut imperdiet nibh imperdiet.
-          Integer commodo tellus ac tortor pellentesque aliquet. Nam et enim
-          porttitor, sagittis turpis hendrerit, bibendum magna. Ut at blandit
-          orci.
+          <hr id="line" />
+          Cras mollis ligula congue suscipit auctor. Donec facilisis diam nulla,
+          eget iaculis lorem rutrum a. Nullam eget sapien malesuada, consequat
+          urna at, scelerisque erat. Quisque malesuada, enim eget placerat
+          mattis, diam sapien dapibus quam, sed sagittis urna nisi at sapien.
+          Proin condimentum sapien sit amet eros volutpat tempus. Vestibulum
+          pretium ut lorem et commodo. Sed efficitur vel mi eu auctor. Phasellus
+          in luctus ante. Sed quis facilisis neque, at pellentesque arcu. Nullam
+          nec lacus a nunc laoreet volutpat nec et ligula. Morbi tempus pretium
+          mauris, nec condimentum nisl ornare dapibus. Maecenas commodo
+          sollicitudin porta. Donec molestie nulla ultrices nulla varius, ut
+          imperdiet nibh imperdiet. Integer commodo tellus ac tortor
+          pellentesque aliquet. Nam et enim porttitor, sagittis turpis
+          hendrerit, bibendum magna. Ut at blandit orci.
         </div>
         <div id="id4">
           Anunturi <br /><br /><br />
@@ -302,7 +301,11 @@
       <br />
 
       <div id="galerie-animata" class="galerie-a">
-        <% for (let imag of locals.imagini){ %>
+        <% 
+        console.log("imagini pentru galeria animata");
+        console.log(locals.imagini);
+        for (let imag of locals.imagini)
+         { %>
 
         <figure>
           <picture>
@@ -313,7 +316,7 @@
             <img src="/<%-imag.mare%>" alt="text" />
           </picture>
 
-          <figcaption><%-imag.descriere%></figcaption>
+          <figcaption><%- imag.text_descriere %></figcaption>
         </figure>
 
         <% } %>

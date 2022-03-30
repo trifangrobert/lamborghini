@@ -7,7 +7,8 @@
 .galerie-a {
   width: 400px;
   height: 300px;
-  border: 4px inset black;
+  border: 10px solid transparent;
+  border-image: url("/resurse/imagini/galerie/borderimage.jpg") 30 round;
   position: relative;
   overflow: hidden;
   margin-bottom: 5rem;
@@ -18,6 +19,7 @@
   bottom: 0;
   background: rgba(255, 255, 255, 0.7);
   width: 100%;
+  height: 50px;
   text-align: center;
 }
 
@@ -36,83 +38,90 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  animation-duration: 21s;
+  animation-duration: 24s;
   transform-origin: center center;
 }
 
-#galerie-animata figure:nth-of-type(7) {
-  /* cea mai de deasupra*/
-  animation-delay: 0s;
-}
-
-#galerie-animata figure:nth-of-type(6) {
-  animation-delay: 3s;
-}
-
-#galerie-animata figure:nth-of-type(5) {
-  animation-delay: 6s;
-}
-
-#galerie-animata figure:nth-of-type(4) {
-  animation-delay: 9s;
-}
-
-#galerie-animata figure:nth-of-type(3) {
-  animation-delay: 12s;
-}
-
-#galerie-animata figure:nth-of-type(2) {
-  animation-delay: 15s;
+#galerie-animata figure:hover {
+  animation-play-state: paused;
 }
 
 #galerie-animata figure:nth-of-type(1) {
+  animation-delay: 21s;
+}
+
+#galerie-animata figure:nth-of-type(2) {
   animation-delay: 18s;
 }
 
-/*cum calculam timpii:
-- avem 7 poze; vrem pentru fiecare un timp de afisare de 1.5 secunde si o trecere spre urmatoarea poza de 1.5 secunde
-- rezulta 3 secunde pentru fiecare imagine
-- 7imagini * 3secunde =21 secunde in total pentru animatie (animation-duration) si fiecare poza cu un delay = 3* numarul de ordine
-- momentul in care trebuie ascunsa poza si pusa in spatele celorlalte (ca sa isi astepte randul pentru noua animatie:
-il calculam cu formula  timp_afisare(normal+trecerea la urmatoarea poza)/timp_total*100 = 3/21*100 =  14.285714(aproximativ)
-100%..... 21s
-x%........3s
+#galerie-animata figure:nth-of-type(3) {
+  animation-delay: 15s;
+}
 
-- calculam 100-14.285714=85.714286 - la acest moment imaginea trebuie sa se vada in spatele imaginii care se afiseaza in mod curent (ca sa se vada si cat timp se realizeaza efectul de schimbare a imaginii
-*/
+#galerie-animata figure:nth-of-type(4) {
+  animation-delay: 12s;
+}
+
+#galerie-animata figure:nth-of-type(5) {
+  animation-delay: 9s;
+}
+
+#galerie-animata figure:nth-of-type(6) {
+  animation-delay: 6s;
+}
+
+#galerie-animata figure:nth-of-type(7) {
+  animation-delay: 3s;
+}
+
+#galerie-animata figure:nth-of-type(8) {
+  animation-delay: 0s;
+}
+
+#galerie-animata figure:nth-of-type(9) {
+  display: none;
+}
+
+#galerie-animata figure:nth-of-type(10) {
+  display: none;
+}
+
+#galerie-animata figure:nth-of-type(11) {
+  display: none;
+}
+
+#galerie-animata figure:nth-of-type(12) {
+  display: none;
+}
+
 @keyframes gal_exemplu {
   0% {
     z-index: 10;
     opacity: 1;
   }
-  /*perioada 0-5% in care se afiseaza fara efect */
-  7.142857% {
-    transform: skew(0deg);
+  12.5% {
+    transform: translateX(30%);
   }
-  /*transformare inceput disparitie*/
-  12% {
+  10% {
     opacity: 1;
   }
-  /* de  aici doresc sa descresc si opacitatea;*/
-  14.285714% {
+  25% {
     z-index: 10;
     opacity: 0;
-    transform: skew(90deg);
+    transform: translateX(-100%);
   }
-  14.285715% {
+  25.000001% {
     z-index: -10;
-    transform: skew(0deg);
+    transform: translateX(30%);
   }
-  /* il ascund cat mai in spate sa nu vina peste imaginile care erau mai sus in html decat el*/
-  85.714287% {
+  87.5% {
     opacity: 0;
-    transform: skew(0deg);
+    transform: translateX(30%);
     z-index: -10;
   }
-  85.714288% {
+  87.500001% {
     z-index: 0;
   }
-  /*setez z-index la 0 ca sa revina la ordinea normala de afisare*/
   100% {
     opacity: 1;
     z-index: 0;

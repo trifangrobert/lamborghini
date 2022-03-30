@@ -51,6 +51,34 @@
 			"luni":["mai", "aprilie", "noiembrie"]
 		},
 		{
+			"cale_fisier":"x6.jpg",
+			"titlu":"x6",
+			"alt":"BMW x6",
+			"text_descriere":"523HP",
+			"luni":["mai", "august", "noiembrie"]
+		},
+		{
+			"cale_fisier":"i8.jpg",
+			"titlu":"i8",
+			"alt":"BMW i8",
+			"text_descriere":"369HP",
+			"luni":["mai", "aprilie", "decembrie"]
+		},
+		{
+			"cale_fisier":"black-ferrari.jpg",
+			"titlu":"ferrari",
+			"alt":"Ferrari",
+			"text_descriere":"820HP",
+			"luni":["octombrie", "aprilie", "noiembrie"]
+		},
+		{
+			"cale_fisier":"orange-mclaren.jpg",
+			"titlu":"mclaren",
+			"alt":"McLaren",
+			"text_descriere":"817HP",
+			"luni":["mai", "septembrie", "noiembrie"]
+		},
+		{
 			"cale_fisier":"red-aventador.jpg",
 			"titlu":"Red Avendator",
 			"alt":"Lamborghini Aventador",

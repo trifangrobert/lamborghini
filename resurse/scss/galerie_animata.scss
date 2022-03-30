@@ -1,11 +1,13 @@
 @use 'sass:list';
 @use 'sass:math';
-$lista_transformari: ((rotateZ(0deg),rotateZ(135deg)),(skew(0deg), skew(90deg)), (scaleX(1) rotateZ(0), scaleX(0) rotateZ(90deg)),(scaleY(1) rotateZ(0deg), scaleY(0) rotateZ(90deg)));
+// $lista_transformari: ((rotateZ(0deg),rotateZ(135deg)),(skew(0deg), skew(90deg)), (scaleX(1) rotateZ(0), scaleX(0) rotateZ(90deg)),(scaleY(1) rotateZ(0deg), scaleY(0) rotateZ(90deg)));
+$lista_transformari: ((rotateZ(0deg),rotateZ(135deg)), (skew(0deg), skew(90deg)));
 $indice:math.random(list.length($lista_transformari));
 
 
 @use '../resurse/scss/galerie_animata_frag' with (
-  $transformare_i: list.nth(list.nth($lista_transformari,$indice),1),
-  $transformare_f: list.nth(list.nth($lista_transformari,$indice),2),
+  $transformare_i: translateX(30%),
+  $transformare_f: translateX(-100%),
+  $nrimag: 2 * (3 + floor(random() * 4)),
   $setare-server: <%- locals.culoare %>
 );
