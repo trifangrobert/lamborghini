@@ -4,6 +4,9 @@ const sharp = require("sharp");
 const { Client } = require("pg");
 const ejs = require("ejs");
 const sass = require("sass");
+const formidable = require("formidable");
+const crypto = require("crypto");
+const session = require("express-session");
 // const { Client } = require("pg/lib");
 var client = new Client({
   database: "bd_lamborghini",
@@ -13,43 +16,105 @@ var client = new Client({
   port: 5432,
 });
 client.connect();
+
+const obGlobal = { obImagini: null, obErori: null };
+
 app = express();
 
 app.set("view engine", "ejs");
 
 app.use("/resurse", express.static(__dirname + "/resurse"));
 
+app.use("/*", function (req, res, next) {
+  res.locals.optiuni = obGlobal.optiuni;
+  next();
+});
+
+client.query(
+  "select * from unnest(enum_range(null::categ_modele))",
+  function (err, rezCateg) {
+    obGlobal.optiuni = rezCateg.rows;
+  }
+);
+
 app.get(["/", "/index", "/home"], function (req, res) {
-  client.query('select * from "Tabel-Test"', function (err, rezQuery) {
+  client.query("select * from cars", function (err, rezQuery) {
     // console.log(rezQuery);
-    console.log(obImagini);
-    console.log("am intrat aici");
+    // console.log(obImagini);
+    // console.log("am intrat aici");
+
     res.render("pagini/index", {
       ip: req.ip,
       imagini: obImagini.imagini,
       produse: rezQuery.rows,
     });
   });
+
   // console.log(__dirname);
   // res.render("pagini/index", {ip:req.ip, imagini:obImagini.imagini, produse: rezQuery.rows});
   // console.log(obImagini);
   // res.render("pagini/index", {a:req.a});
 });
 
-app.get("/produse", function(req, res) {
-  client.query('select * from cars', function (err, rezQuery) {
-    res.render("pagini/produse", {produse: rezQuery.rows});
-  });
+app.get("/produse", function (req, res) {
+  console.log("req query");
+  console.log(req.query.tip);
+  client.query(
+    "select * from unnest(enum_range(null::categ_modele))",
+    function (err, rezCateg) {
+      var cond_where = req.query.tip ? ` tip_produs='${req.query.tip}'` : "1=1";
+      console.log("show rezCateg");
+      console.log(rezCateg);
+      client.query(
+        "select * from cars where " + cond_where,
+        function (err, rezQuery) {
+          // console.log(err);
+          // console.log(rezQuery);
+          res.render("pagini/produse", {
+            produse: rezQuery.rows,
+            optiuni: obGlobal.optiuni,
+          });
+        }
+      );
+    }
+  );
+});
+app.get("/produs/:id", function (req, res) {
+  client.query(
+    `select * from cars where id=${req.params.id}`,
+    function (err, rezQuery) {
+      res.render("pagini/produs", { prod: rezQuery.rows[0] });
+    }
+  );
 });
 
-app.get("/produs/:id", function(req, res) {
-  client.query(`select * from cars where id=${req.params.id}`, function (err, rezQuery) {
-    res.render("pagini/produs", {prod: rezQuery.rows[0]});
-  });
+app.get("/produse/:categ", function (req, res) {
+  client.query(
+    "select * from unnest(enum_range(null::categ_modele))",
+    function (err, rezCateg) {
+      client.query(
+        `select * from cars where categorie='${req.params.categ}'`,
+        function (err, rezQuery) {
+          if (err) {
+            randeazaEroare(res, 2);
+          } else {
+            // console.log(err);
+            console.log("rezQuery", rezQuery);
+            console.log("rezCateg", rezCateg);
+            console.log("categ", req.params.categ);
+            res.render("pagini/produse", {
+              produse: rezQuery.rows,
+              optiuni: obGlobal.optiuni,
+            });
+          }
+        }
+      );
+    }
+  );
 });
 
 app.get("/galerie-statica", function (req, res) {
-  res.render("fragmente/galerie-statica", {imagini: obImagini.imagini});
+  res.render("fragmente/galerie-statica", { imagini: obImagini.imagini });
 });
 
 app.get("/*.ejs", function (req, res) {
@@ -124,6 +189,24 @@ app.get("*/galerie_animata.css", function (req, res) {
   }
 });
 
+parolaServer = "tehniciweb";
+app.post("/inreg", function (req, res) {
+  var formular = new formidable.IncomingForm();
+  formular.parse(req, function (err, campuriText, campuriFisier) {
+    console.log();
+    var parolaCriptata = crypto
+      .scryptSync(campuriText.parola, parolaServer, 64)
+      .toString("hex");
+    var comandaInserare = `insert into utilizatori (username, nume, prenume, parola, email, culoare_chat) values ('${campuriText.username}', '${campuriText.nume}', '${campuriText.prenume}', '${parolaCriptata}', '${campuriText.email}', '${campuriText.culoare_chat}')`;
+    client.query(comandaInserare, function (err, rezInserare) {
+      if (err) {
+        console.log(err);
+      }
+    });
+    res.send("OK");
+  });
+});
+
 app.get("/eroare", function (req, res) {
   randeazaEroare(res, 1, "Titlu schimbat");
 });
@@ -172,11 +255,15 @@ function randeazaEroare(res, identificator, titlu, text, imagine) {
     res.status(eroare.identificator);
   }
   res.render("pagini/eroare_generala", {
+    optiuni: obGlobal.optiuni,
     titlu: titlu,
     text: text,
     imagine: imagine,
   });
 }
+
+var s_port = process.env.PORT || 8080;
+app.listen(s_port);
 
 app.listen(8080);
 console.log("They see me coding...");

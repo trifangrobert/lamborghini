@@ -43,11 +43,11 @@
     <%- include("../fragmente/header.ejs"); %>
     <main>
       <p id="watermark"></p>
-      <% for (let p of locals.produse){ %>
-      <p><%- p.id %> <%- p.nume %> <%- p.pret %></p>
-      <% } %>
+
       <p><%- locals.ip%></p>
       <%- include("../fragmente/galerie-statica.ejs"); %>
+
+      <p><button id="btn_tema">Schimba tema</button></p>
 
       <div id="grid-container">
         <div id="id1">

@@ -99,6 +99,9 @@
     z-index: 10;
     opacity: 1;
   }
+  9.375% {
+    transform: translate(0);
+  }
   12.5% {
     transform: translateX(30%);
   }

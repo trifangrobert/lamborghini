@@ -104,11 +104,11 @@
   margin-bottom: 2cm;
   margin-top: 2cm;
 }
-@page: left {
+@page:left {
   margin-left: 2.5cm;
   margin-right: 0.5cm;
 }
-@page: right {
+@page:right {
   margin-right: 2.5cm;
   margin-left: 0.5cm;
 }

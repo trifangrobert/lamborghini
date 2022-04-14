@@ -1,3 +1,13 @@
+<script>
+  var tema = localStorage.getItem("tema");
+    if (tema) {
+        document.body.classList.add("dark");
+    }
+    else {
+        document.body.classList.remove("dark");
+    }
+</script>
+
 <link rel="stylesheet" href="./resurse/css/print.css" />
 
 <header>
@@ -10,16 +20,17 @@
 
       <ul class="menu">
         <li>
-          <a href="index.html"><span id="home-display" class="fas fa-home"></span><span id="home-write">Acasa</span></a>
+          <a href="index"><span id="home-display" class="fas fa-home"></span><span id="home-write">Acasa</span></a>
         </li>
         <li>
-          <div>Firme</div>
+          <div>Produse</div>
           <ul class="submenu">
             <!-- pagini pentru alte masini -->
-            <li><a href="/index#lamborghini">Detalii despre lamborghini</a></li>
-            <li><a href="/index#ferrari">Ferrari</a></li>
-            <li><a href="/index#mclaren">Mclaren</a></li>
-            <li><a href="/index#bmw">BMW</a></li>
+
+            <% 
+            for (let opt of locals.optiuni) { %>
+              <li><a href="/produse/<%- opt.unnest %>"><%- opt.unnest %></a></li>  
+            <% } %>
           </ul>
         </li>
         <li>
@@ -30,7 +41,8 @@
           </ul>
         </li>
         <li><a href="despre">Despre</a></li>
-        <li><a href="index.html">Contact</a></li>
+        <li><a href="index">Contact</a></li>
+        <li><a href="inregistrare">Inregistrare</a></li>
       </ul>
     </nav>
     <div title="go back to the top" class="rotated-square">

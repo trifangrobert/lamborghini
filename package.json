@@ -4,6 +4,7 @@
   "description": "site masini",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,9 @@
     "bmw"
   ],
   "author": "Trifan Robert-Gabriel",
+  "engines": {
+    "node": "14.x"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/trifangrobert/lamborghini/issues"
@@ -25,6 +29,8 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "formidable": "^2.0.1",
     "nodemon": "^2.0.15",
     "pg": "^8.7.3",
     "sass": "^1.49.9",

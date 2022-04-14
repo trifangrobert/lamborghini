@@ -5,16 +5,18 @@
 }
 
 body {
-  background-color: var(--colorC);
-}
-
-:root {
   /* #BABDF0 */
   --colorA: #2b2d99;
   --colorB: #1a1b5c;
   --colorC: #babdf0;
   --colorD: #4043e6;
   --colorE: #3336b8;
+  background-color: var(--colorC);
+}
+
+body.dark {
+  --colorA: orange;
+  --colorC: pink;
 }
 
 #grid-container {
@@ -335,7 +337,7 @@ nav li {
 nav ul.menu > li {
   position: relative;
   float: left;
-  width: 20%;
+  width: 16.6%;
 }
 
 nav ul.menu li a,
@@ -502,7 +504,6 @@ nav ul.menu > li:hover > ul {
   #tab {
     border-spacing: 0px;
   }
-  
   #div-table {
     overflow-x: scroll;
   }
