@@ -8,13 +8,27 @@ const formidable = require("formidable");
 const crypto = require("crypto");
 const session = require("express-session");
 // const { Client } = require("pg/lib");
+// var client = new Client({
+//   database: "bd_lamborghini",
+//   user: "king",
+//   password: "1248",
+//   host: "localhost",
+//   port: 5432,
+// });
+
 var client = new Client({
-  database: "bd_lamborghini",
-  user: "king",
-  password: "1248",
-  host: "localhost",
+  host:"ec2-34-197-84-74.compute-1.amazonaws.com",
+  database: "d8e6p7u885ffht",
+  user: "wabkruepcqhxmn",
   port: 5432,
+  password:"a7958fd432307c231627e45a491d74fd4dd8367474908cbb039d002c81049796",
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
+
+
+
 client.connect();
 
 const obGlobal = { obImagini: null, obErori: null };
